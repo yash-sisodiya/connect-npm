@@ -1,0 +1,148 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+:root {
+  --color-bg: #ffffff;
+  --color-bg-foreground: #f6f6f8;
+  --color-text: #1e1f4b;
+  --color-text-secondary: #1e1f4bb2;
+  --color-border: #0a0a0a;
+}
+
+/* Dark theme */
+[data-theme="dark"] {
+  --color-bg: #0a0a0a; /* main background */
+  --color-bg-foreground: #1a1a1d; /* surface / cards */
+  --color-text: #f6f6f8; /* primary text */
+  --color-text-secondary: #f6f6f8b2; /* muted text */
+  --color-border: #2e2e2e; /* subtle border */
+}
+
+a {
+  color: var(--color-text);
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+a:hover {
+  color: var(--color-text);
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.krypto-connect-auth-body > * + * {
+  margin-top: 1rem; /* 16px, same as space-y-4 */
+}
+.krypto-connect-connection-title {
+  font-size: 16px;
+  color: var(--color-text);
+  font-weight: 600;
+  text-align: center;
+}
+
+.krypto-connect-info-section {
+  display: flex;
+  gap: 10px;
+}
+
+.krypto-connect-section-icon {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.krypto-connect-section-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.krypto-connect-section-description {
+  font-size: 12px;
+  color: var(--color-text-secondary);
+}
+
+.krypto-connect-auth-footer-description {
+  color: var(--color-text-secondary);
+  font-size: 12px;
+  margin-top: 8px;
+}
+
+.krypto-connect-otp-container {
+  width: max-content;
+  margin: 0 auto;
+}
+
+.krypto-connect-status-modal-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1.5rem 1rem;
+  gap: 1rem;
+}
+
+.krypto-connect-status-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.krypto-connect-status-success {
+  color: #059669;
+}
+
+.krypto-connect-status-error {
+  color: #dc2626;
+}
+
+.krypto-connect-status-message {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+/* Logos row */
+
+.permissions-separator {
+  font-size: 1.25rem;
+  color: var(--color-text-secondary);
+}
+
+/* List */
+.permissions-list {
+  margin: 1rem 0;
+  color: var(--color-text);
+}
+
+.permissions-subtitle {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.permissions-list ol {
+  padding-left: 1.25rem;
+  margin: 0;
+  list-style-type: decimal;
+}
+
+.permissions-list li {
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+  color: var(--color-text-secondary);
+}
+
+/* Info box */
+.permissions-info {
+  margin: 1.5rem 0;
+  padding: 0.75rem 1rem;
+  background: var(--color-bg-foreground);
+  border-radius: 8px;
+  font-size: 0.85rem;
+  color: var(--color-text);
+  line-height: 1.4;
+}

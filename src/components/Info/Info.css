@@ -1,0 +1,40 @@
+.krypto-connect-info {
+  position: relative;
+  width: 100%;
+  display: flex;
+  gap: 4px;
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 12px;
+  background: var(--color-foreground);
+  color: var(--color-secondary);
+}
+
+.krypto-connect-info > svg {
+  grid-column: 1;
+  width: 16px;
+  height: 16px;
+  margin-top: 2px;
+  color: currentColor;
+}
+
+.krypto-connect-info--default {
+  background: var(--color-bg-foreground);
+  color: var(--color-text);
+}
+
+.krypto-connect-info--destructive {
+  background: #fef2f2;
+  border-color: #fca5a5;
+  color: #b91c1c;
+}
+
+.krypto-connect-info-title {
+  font-weight: 600;
+}
+
+.krypto-connect-info-description {
+  color: var(--color-text-secondary);
+  margin-top: 2px;
+  font-size: 12px;
+}

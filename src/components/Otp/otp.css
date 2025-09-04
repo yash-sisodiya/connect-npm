@@ -1,0 +1,24 @@
+.krypto-connect-otp-input-container {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.krypto-connect-otp-input-box {
+  text-align: center;
+  width: 50px;
+  height: 50px;
+  font-size: 20px;
+  font-weight: 500;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  outline: none;
+  color: var(--color-text);
+  transition: border-color 0.2s ease;
+  background: transparent;
+}
+
+.krypto-connect-otp-input-box:focus {
+  box-shadow: inset;
+}

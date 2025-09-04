@@ -1,0 +1,39 @@
+.krypto-connect-logos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  color: var(--color-text);
+}
+
+.krypto-connect-logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.krypto-connect-logo img {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+}
+
+.krypto-connect-brand-logo {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.krypto-connect-brand-logo svg {
+  width: 36px;
+  height: 36px;
+}
+.krypto-connect-brand-logo--true svg {
+  width: 24px;
+  height: 24px;
+}
