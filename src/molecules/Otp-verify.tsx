@@ -11,7 +11,7 @@ import {
 import Otp from "../components/Otp";
 import { ConnectLogo } from "../components/logo";
 
-const OTPVerification = ({
+export const OTPVerification = ({
   open,
   setStep,
   setOpen,
@@ -60,5 +60,3 @@ const OTPVerification = ({
     </Modal>
   );
 };
-
-export default OTPVerification;

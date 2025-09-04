@@ -4,7 +4,7 @@ import { useKryptosConnect } from "../context/KryptosContext";
 import "./../styles.css";
 import { Auth } from "./Auth";
 import { KryptosLogo } from "../components/logo";
-import OTPVerification from "./Otp-verify";
+import { OTPVerification } from "./Otp-verify";
 import { Permissions } from "./Permissions";
 import { StatusModal } from "./StatusModal";
 // import OTPVerification from "./Otp-verify";
