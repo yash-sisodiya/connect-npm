@@ -24,7 +24,11 @@ export const OTPVerification = ({
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    alert(`Entered OTP: ${otp}`);
+    setStep(3);
+  };
+
+  const handleOtpComplete = (value: string) => {
+    setOtp(value);
   };
 
   const handleClose = () => {
@@ -45,13 +49,13 @@ export const OTPVerification = ({
         <ConnectLogo />
 
         <form onSubmit={handleSubmit}>
-          <Otp />
+          <Otp onComplete={handleOtpComplete} />
           <br />
           <Button
             type="submit"
-            onClick={() => setStep(3)}
             variant="outline"
             size="full"
+            disabled={otp.length === 0}
           >
             Continue <MoveRight />
           </Button>

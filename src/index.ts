@@ -1,5 +1,5 @@
 import "./styles.css";
-export { KryptosConnect } from "./molecules/Kryptos-connect";
+export { KryptosConnectButton } from "./molecules/Kryptos-connect";
 export {
   KryptosConnectProvider,
   useKryptosConnect,

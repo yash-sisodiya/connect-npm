@@ -9,16 +9,19 @@ type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   size?: ButtonSize;
 };
 
-export const Button: React.FC<ButtonProps> = ({
-  variant = "outline",
-  className = "",
-  size = "max-content",
-  ...props
-}) => {
-  return (
-    <button
-      className={`krypto-connect-btn krypto-connect-btn--${size} krypto-connect-btn--${variant} ${className}`}
-      {...props}
-    />
-  );
-};
+export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+  (
+    { variant = "outline", className = "", size = "max-content", ...props },
+    ref
+  ) => {
+    return (
+      <button
+        ref={ref}
+        className={`krypto-connect-btn krypto-connect-btn--${size} krypto-connect-btn--${variant} ${className}`}
+        {...props}
+      />
+    );
+  }
+);
+
+Button.displayName = "Button";

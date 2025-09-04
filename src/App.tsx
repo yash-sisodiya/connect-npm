@@ -1,6 +1,6 @@
-import { KryptosConnect } from "./molecules/Kryptos-connect";
+import { KryptosConnectButton } from "./molecules/Kryptos-connect";
 function App() {
-  return <KryptosConnect />;
+  return <KryptosConnectButton />;
 }
 
 export default App;

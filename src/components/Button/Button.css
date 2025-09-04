@@ -57,3 +57,10 @@
 .krypto-connect-btn--full {
   width: 100%;
 }
+
+.krypto-connect-btn:disabled {
+  opacity: 0.6; /* faded look */
+  cursor: not-allowed; /* show blocked cursor */
+  pointer-events: none;
+  border-color: var(--color-text-secondary);
+}

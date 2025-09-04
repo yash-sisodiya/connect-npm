@@ -4,6 +4,8 @@ type KryptosConfig = {
   appName: string;
   appLogo?: React.ReactNode | string;
   theme?: "light" | "dark";
+  onSuccess?: () => void;
+  onError?: () => void;
 };
 
 const KryptosContext = createContext<KryptosConfig | undefined>(undefined);

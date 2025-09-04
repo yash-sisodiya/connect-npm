@@ -1,30 +1,57 @@
-import { useState } from "react";
+import { forwardRef, useState } from "react";
 import { Button } from "../components/Button";
+import { KryptosLogo } from "../components/logo";
 import { useKryptosConnect } from "../context/KryptosContext";
 import "./../styles.css";
 import { Auth } from "./Auth";
-import { KryptosLogo } from "../components/logo";
 import { OTPVerification } from "./Otp-verify";
 import { Permissions } from "./Permissions";
 import { StatusModal } from "./StatusModal";
-// import OTPVerification from "./Otp-verify";
 
-export const KryptosConnect = () => {
-  const { theme } = useKryptosConnect();
-  const [step, setStep] = useState(1);
+import type { ButtonHTMLAttributes } from "react";
+
+export interface KryptosConnectButtonProps
+  extends ButtonHTMLAttributes<HTMLButtonElement> {}
+
+export const KryptosConnectButton = forwardRef<
+  HTMLButtonElement,
+  KryptosConnectButtonProps
+>(({ children, className, ...props }, ref) => {
   const [open, setOpen] = useState(false);
   return (
-    <div className="krypto-connect" data-theme={theme}>
-      {/* Trigger Button */}
+    <>
       <Button
+        ref={ref}
         onClick={() => setOpen(true)}
-        className="krypto-connect-trigger-btn"
+        className={`krypto-connect-trigger-btn ${className ?? ""}`}
+        {...props}
       >
-        Connect with <KryptosLogo />
+        {children ? (
+          children
+        ) : (
+          <>
+            Connect with <KryptosLogo />
+          </>
+        )}
       </Button>
+      <KryptosConnectModel open={open} setOpen={setOpen} />
+    </>
+  );
+});
 
-      {/* Reusable Modal */}
+KryptosConnectButton.displayName = "KryptosConnectButton";
 
+export const KryptosConnectModel = ({
+  open,
+  setOpen,
+}: {
+  open: boolean;
+  setOpen: (open: boolean) => void;
+}) => {
+  const { theme, onSuccess, onError } = useKryptosConnect();
+  const [step, setStep] = useState(1);
+  return (
+    <div className="krypto-connect" data-theme={theme}>
       {step === 1 && <Auth open={open} setOpen={setOpen} setStep={setStep} />}
       {step === 2 && (
         <OTPVerification open={open} setOpen={setOpen} setStep={setStep} />
@@ -46,8 +73,17 @@ export const KryptosConnect = () => {
             setOpen(false);
             setStep(1);
           }}
-          status="success"
-          message="Connection successful"
+          onSuccess={() => {
+            setStep(1);
+            setOpen(false);
+            onSuccess?.();
+          }}
+          onError={() => {
+            setStep(1);
+            setOpen(false);
+            onError?.();
+          }}
+          status={Math.random() > 0.5 ? "success" : "error"}
         />
       )}
     </div>
