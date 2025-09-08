@@ -8,14 +8,21 @@ export default defineConfig({
   build: {
     lib: {
       entry: path.resolve(__dirname, "src/index.ts"),
-      name: "MyUI",
+      name: "KryptosConnect",
       formats: ["es", "cjs", "umd"],
-      fileName: (format) =>
-        format === "es" ? "krypto-connect.js" : "krypto-connect.cjs",
+      fileName: (format) => {
+        if (format === "es") return "kryptos-connect.js"; // ESM
+        if (format === "cjs") return "kryptos-connect.cjs.js"; // CommonJS
+        if (format === "umd") return "kryptos-connect.umd.js"; // UMD
+        return `kryptos-connect.${format}.js`; // fallback
+      },
     },
     rollupOptions: {
       external: ["react", "react-dom"],
       output: {
+        exports: "named",
+        name: "KryptosConnect",
+        extend: true,
         globals: {
           react: "React",
           "react-dom": "ReactDOM",

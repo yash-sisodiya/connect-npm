@@ -15,6 +15,7 @@
   align-items: center;
   justify-content: center;
   font-weight: bold;
+  background-color: var(--color-bg-foreground);
 }
 
 .krypto-connect-logo img {

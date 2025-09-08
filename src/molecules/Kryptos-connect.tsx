@@ -11,12 +11,15 @@ import { StatusModal } from "./StatusModal";
 import type { ButtonHTMLAttributes } from "react";
 
 export interface KryptosConnectButtonProps
-  extends ButtonHTMLAttributes<HTMLButtonElement> {}
+  extends ButtonHTMLAttributes<HTMLButtonElement> {
+  onSuccess?: () => void;
+  onError?: () => void;
+}
 
 export const KryptosConnectButton = forwardRef<
   HTMLButtonElement,
   KryptosConnectButtonProps
->(({ children, className, ...props }, ref) => {
+>(({ children, className, onSuccess, onError, ...props }, ref) => {
   const [open, setOpen] = useState(false);
   return (
     <>
@@ -34,7 +37,12 @@ export const KryptosConnectButton = forwardRef<
           </>
         )}
       </Button>
-      <KryptosConnectModel open={open} setOpen={setOpen} />
+      <KryptosConnectModel
+        open={open}
+        setOpen={setOpen}
+        onSuccess={onSuccess}
+        onError={onError}
+      />
     </>
   );
 });
@@ -44,11 +52,15 @@ KryptosConnectButton.displayName = "KryptosConnectButton";
 export const KryptosConnectModel = ({
   open,
   setOpen,
+  onSuccess,
+  onError,
 }: {
   open: boolean;
   setOpen: (open: boolean) => void;
+  onSuccess?: () => void;
+  onError?: () => void;
 }) => {
-  const { theme, onSuccess, onError } = useKryptosConnect();
+  const { theme } = useKryptosConnect();
   const [step, setStep] = useState(1);
   return (
     <div className="krypto-connect" data-theme={theme}>

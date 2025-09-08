@@ -32,7 +32,6 @@ const useOtp = (
     if (isComplete) {
       timer = setTimeout(() => {
         onComplete(inputArr.join(""));
-        console.log("inputArr", inputArr.join(""));
         // setInputArr(new Array(otpLength).fill(""));
       }, autoSubmitDelay);
     }
