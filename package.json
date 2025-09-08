@@ -1,17 +1,16 @@
 {
-  "name": "@kryptos/connect",
-  "version": "0.0.1",
+  "name": "kryptos-connect",
+  "version": "0.0.5",
   "type": "module",
-  "main": "dist/kryptos-connect.cjs",
+  "main": "dist/kryptos-connect.js",
   "module": "dist/kryptos-connect.js",
   "types": "dist/index.d.ts",
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
       "import": "./dist/kryptos-connect.js",
-      "require": "./dist/kryptos-connect.cjs"
-    },
-    "./style.css": "./dist/style.css"
+      "require": "./dist/kryptos-connect.cjs.js",
+      "types": "./dist/index.d.ts"
+    }
   },
   "files": [
     "dist"
