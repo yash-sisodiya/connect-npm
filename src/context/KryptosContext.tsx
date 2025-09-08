@@ -1,4 +1,4 @@
-import { createContext, ReactNode, useContext } from "react";
+import React, { createContext, useContext } from "react";
 
 type KryptosConfig = {
   appName: string;
@@ -12,7 +12,7 @@ export const KryptosConnectProvider = ({
   children,
   config,
 }: {
-  children: ReactNode;
+  children: React.ReactNode;
   config: KryptosConfig;
 }) => {
   return (

@@ -60,7 +60,7 @@ export const Auth = ({
             text: "We never share your data without your permission",
           },
         ].map((section) => (
-          <div className="krypto-connect-info-section">
+          <div className="krypto-connect-info-section" key={section.title}>
             <span className="krypto-connect-section-icon">{section.icon}</span>
             <div>
               <div className="krypto-connect-section-title">
